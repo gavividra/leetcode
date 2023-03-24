@@ -36,5 +36,8 @@ connections[i].length == 2
 0 <= ai, bi <= n - 1
 ai != bi
 """
+
+## Natan is a dummy
+
 class Solution:
     def minReorder(self, n: int, connections: List[List[int]]) -> int:
