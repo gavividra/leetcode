@@ -21,3 +21,12 @@ Example 3:
 Input: nums = [3,3], target = 6
 Output: [0,1]
 '''
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        for i in range(len(nums)):
+            for j in range(len(nums)):
+                if(nums[i] + nums[j] == target and j != i):
+                    return [i, j]
+                else:
+                    continue
