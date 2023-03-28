@@ -42,8 +42,11 @@ class Solution(object):
             inc = 2*(numRows-1)
             for i in range(r, len(s), inc):
                 output += s[i]
+                if(r>0 and r<numRows-1 
+                    and len(s) > i+inc-2*r):
+                    output += s[i+inc-2*r]
         return output
-        
+
         '''
         indent = numRows - 2
         space = ""
