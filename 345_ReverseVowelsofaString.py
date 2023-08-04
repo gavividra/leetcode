@@ -14,3 +14,21 @@ class Solution:
             else :
                 r -=1
         return ''.join(s)
+'''                       
+class Solution(object):
+    def reverseVowels(self, s):
+        v = "aeiouAEIOU"
+        vowels = []
+        characters = []
+        word = ""
+        z = 0
+        for letter in s:
+            if letter == a,e,i,o,u:
+                vowels.insert(letter)
+            characters.append(letter)
+        for i in characters:
+            if i == a,e,i,o,u:
+                i = vowels[z]
+                z += 1
+        characters.join()
+'''
