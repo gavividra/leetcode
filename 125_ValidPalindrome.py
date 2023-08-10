@@ -4,6 +4,9 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
+
+        '''
+        # Version 1
         s_arr = []
         for i in s:
             if i.islower():
@@ -11,4 +14,13 @@ class Solution(object):
             elif i.isupper():
                 s_arr.append(i.lower())
         return s_arr[-1:] == s_arr[0:]
+        '''
+
+        # Version 2
+        s_arr = []
+        for i in s:
+            if i.isalnum():
+                s_arr.append(i.lower())
+        return s_arr == s_arr[::-1]
+
         
