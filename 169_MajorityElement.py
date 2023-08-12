@@ -4,7 +4,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-
+        '''
         # Hard Version
         hash_map = {}
         for num in nums:
@@ -18,4 +18,9 @@ class Solution(object):
             if hash_map[num] > hash_map[x]:
                 x = num
         return x
+        '''
+
+        #Easy Version
+        nums.sort()
+        return nums[(len(nums)-1)//2]
 
