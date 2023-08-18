@@ -10,3 +10,10 @@ class Solution(object):
         :type root: TreeNode
         :rtype: TreeNode
         """
+        if root:
+            self.invertTree(root.left)
+            temp = root.right
+            self.invertTree(root.right)
+            root.right = root.left
+            root.left = temp
+        return root
