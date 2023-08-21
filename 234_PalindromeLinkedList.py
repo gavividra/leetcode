@@ -9,3 +9,8 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
+        values = [head.val]
+        while head.next:
+            head = head.next
+            values.append(head.val)
+        return values == values[::-1]
