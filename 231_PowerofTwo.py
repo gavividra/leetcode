@@ -20,3 +20,10 @@ class Solution(object):
             if num != 1:
                 return False
         return True
+
+        '''
+        #Using Bitwise (0010101 expressions for numbers)
+        if n<=0:
+            return False
+        return (n&(n-1))==0
+        '''
