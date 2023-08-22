@@ -61,7 +61,8 @@ class Solution(object):
         return 0
         ''' 
 
-
+        '''
+        #Version 3
         v1 = version1.split('.')
         v2 = version2.split('.')
 
@@ -80,3 +81,23 @@ class Solution(object):
                 return -1
 
         return 0
+        '''
+
+        #Version 4
+        v1 = version1.split('.')
+        v2 = version2.split('.')
+        if(len(v1)>len(v2)):
+            for i in range(0,len(v1)-len(v2)):
+                v2.append('0')
+        elif(len(v1)<len(v2)):
+            for i in range(0,len(v2)-len(v1)):
+                v1.append('0')
+        result = 0
+        for i in range(0,len(v1)):
+            if(int(v1[i])<int(v2[i])):
+                result = -1
+                break
+            elif(int(v1[i])>int(v2[i])):
+                result =1
+                break
+        return result
