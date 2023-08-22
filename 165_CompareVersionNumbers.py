@@ -35,7 +35,8 @@ class Solution(object):
         else:
             return 0
         """  
-
+        '''
+        #Version 2
         v1 = version1.split('.')
         v2 = version2.split('.')
         
@@ -57,4 +58,25 @@ class Solution(object):
             for i in range(len(v1), len(v2)):
                 if int(v2[i]) > 0:
                     return -1
+        return 0
+        ''' 
+
+
+        v1 = version1.split('.')
+        v2 = version2.split('.')
+
+        for i in range(0,min(len(v1),len(v2)),1):
+            while v1[0] == '0':
+                v1.pop(0)
+            while v2[0] == '0':
+                v2.pop(0)
+            while len(v1[i]) < len(v2[i]):
+                v1.append(0)
+            while len(v1[i]) > len(v2[i]):
+                v2.append(0)
+            if int(v1[i]) > int(v2[i]):
+                return 1
+            if int(v1[i]) < int(v2[i]):
+                return -1
+
         return 0
