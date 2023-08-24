@@ -10,6 +10,29 @@ class Solution(object):
         :type head1, head1: ListNode
         :rtype: ListNode
         """
+
+        listA=['A']
+        listB=['B']
+
+        while headA or headB:
+            if headA:
+                listA.append(headA)
+                headA=headA.next
+            if headB:
+                listB.append(headB)
+                headB=headB.next
+        prev = None
+        while listA and listB:
+            A=listA.pop(-1)
+            B=listB.pop(-1)
+            # print(A,B)
+
+            if A!=B:
+                return prev
+            
+            prev=A
+
+        '''
         #Given Wierd Solution
         a = headA
         b = headB
@@ -23,6 +46,7 @@ class Solution(object):
             else:
                 b=headA
         return a
+        '''
 
         '''
         # Confused by return value -- Version 1
