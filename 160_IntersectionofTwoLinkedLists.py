@@ -10,7 +10,21 @@ class Solution(object):
         :type head1, head1: ListNode
         :rtype: ListNode
         """
+        #Given Wierd Solution
+        a = headA
+        b = headB
+        while a != b:
+            if a:
+                a=a.next
+            else:
+                a=headB
+            if b:
+                b=b.next
+            else:
+                b=headA
+        return a
 
+        '''
         # Confused by return value -- Version 1
         intersectVal = 0
         change = False
@@ -38,3 +52,6 @@ class Solution(object):
                 break
             headB = headB.next
         return "Intersected at '%d'" % (intersectVal)
+        '''
+        
+        
