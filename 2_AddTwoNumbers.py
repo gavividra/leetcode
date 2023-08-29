@@ -22,6 +22,12 @@ class Solution(object):
             carry = val//10
             val = val%10
             
+            # # Reverse Order
+            # node = ListNode(val)
+            # node.next = tail.next
+            # tail.next = node
+
+            # Forward Order
             node = ListNode(val)
             tail.next = node
             tail = tail.next
