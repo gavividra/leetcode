@@ -10,6 +10,7 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
+        '''
         # Version 1
         if not head:
             return False
@@ -26,5 +27,18 @@ class Solution(object):
                 temp = temp.next
             curr = curr.next
         return False
+        '''
 
+        # Version 2
+        if not head or not head.next:
+            return False
+    
+        slow = head
+        fast = head.next
+        while fast and fast.next:
+            if slow == fast:
+                return True
+            slow = slow.next
+            fast = fast.next.next
+        return False
         
