@@ -22,3 +22,23 @@ class Solution(object):
                 result += abs(value-quantity)
         return result
         '''
+        # V2
+        frequency = {}
+        
+        for char in s:
+            if char in frequency:
+                frequency[char] += 1
+            else:
+                frequency[char] = 1
+        
+        unique_frequencies = set()
+        deletions = 0
+
+        for char, freq in frequency.items():
+            while freq in unique_frequencies:
+                freq -= 1
+                deletions += 1
+            if freq > 0:
+                unique_frequencies.add(freq)
+
+        return deletions
