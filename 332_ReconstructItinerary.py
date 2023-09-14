@@ -43,6 +43,7 @@ class Solution(object):
         return result
         '''
 
+        '''
         # Version 3 -- exceding time limit
         def get_next_airport(airport):
             for i, ticket in enumerate(tickets):
@@ -69,3 +70,39 @@ class Solution(object):
         dfs(airport)
 
         return result
+        '''
+
+        # Version 4 -- Correct
+        def dfs(airport):
+            if len(result) == len(tickets) + 1:
+                return True
+            if airport not in graph:
+                return False
+            for i, next_airport in enumerate(graph[airport]):
+                if not visited[airport][i]:
+                    visited[airport][i] = True
+                    result.append(next_airport)
+                    if dfs(next_airport):
+                        return True
+                    result.pop()
+                    visited[airport][i] = False
+            return False
+
+        graph = {}
+        for from_airport, to_airport in tickets:
+            if from_airport not in graph:
+                graph[from_airport] = []
+            graph[from_airport].append(to_airport)
+
+        for airport in graph:
+            graph[airport].sort()
+
+        result = ["JFK"]
+        visited = {airport: [False] * len(destinations) for airport, destinations in graph.items()}
+
+        dfs("JFK")
+
+        return result
+
+        
+        
